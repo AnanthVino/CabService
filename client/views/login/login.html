@@ -1,0 +1,47 @@
+<Template name="login_form">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
+                <h3 class="text-center">FLIPKART</h3>
+                <form class="panel login-form" id="login_form" name="login_form" action="" style="border:1px solid gray;">
+                    <div class="panel-heading">
+                        <h3 class="semibold">Log in</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="email-label">Email</label>
+                            <input name="email" id="login_email" type="text" class="form-control input-sm" placeholder="" data-parsley-errors-container="#login_error_container" data-parsley-error-message="Please enter your email" data-parsley-required>
+                            <i class="ico-user2 form-control-icon"></i>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="password-label">Password</label>
+                            <input name="password" id="login_password" type="password" class="form-control input-sm" placeholder="" data-parsley-errors-container="#login_error_container" data-parsley-error-message="Please enter your password" data-parsley-required>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="text-right">
+                                <h5><a href="">Forgot password?</a></h5>
+                            </div>
+                        </div>
+
+                        <div id="login_error_container" class="mb15 text error-container text-danger"></div>
+
+                        <div class="form-group">
+                            <button type="button" id="login" class="btn btn-block btn-sm btn-primary">
+                                <span class="semibold">Log in</span>
+                            </button>
+                        </div>
+
+                        <div class="a-divider a-divider-break">
+                            <h5 class="text-center">New to Amazon?</h5>
+                        </div>
+                        <div class="text-center">
+                            <a id="new_customer" class="btn btn-block btn-sm btn-info" href="/signup">I am a new customer</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</Template>

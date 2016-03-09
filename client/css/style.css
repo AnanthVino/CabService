@@ -1,0 +1,79 @@
+body
+{
+	background-color: #E0E0E0;
+}
+/*HOMEPAGE CSS*/
+.navbar-custom
+{
+	border-radius: 0px;
+	background-color: #232f3e;
+	height: 75px;
+	width:100%;
+	margin-bottom: 0px!important;
+}
+.input-group-btn
+{
+	border-radius: 0px!important;
+	width:1%!important;
+	background-color: #336699;
+}
+.search-box
+{
+	width:60%!important;
+}
+.btn-search
+{
+	background: #336699;
+	color:white!important;
+}
+.breadcrumb
+{
+	background-color: #232f3e;
+}
+#navbar_collapse
+{
+	background-color: #333366;
+	color:black;
+}
+.carousel-inner {
+    height: 576px;
+    overflow: hidden;
+}
+.carousel-inner>.item>img {
+    margin: 0 auto;
+    height: 576px;
+}
+.cart
+{
+	background: #336699;
+	color: white!important;
+	border-radius: 0px;
+	width:100px;
+	margin-left:30px;
+}
+.heading
+{
+	color:white;
+	font-size: 30px;
+	font-family: 'Oswald', sans-serif;
+	font-weight: bold;
+}
+
+.dropdown-menu > li.kopie > a 
+{
+    padding-left: 5px;
+}
+
+/*SIGNUP FORM CSS*/
+.main 
+{
+	background-color: #E0E0E0;
+}
+.signup-form
+{
+	background-color: #E0E0E0;
+}
+.login-form
+{
+	background-color: #E0E0E0;
+}

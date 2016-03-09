@@ -1,0 +1,20 @@
+<Template name="header_layout">
+    <div class="navbar navbar-custom"> 
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Cab Service</a>
+            </div> 
+            <ol class="breadcrumb pull-right mb35">
+                {{#if currentUser}}
+                    <li><a href="/signup" class="sign-out">{{username}}, SIGNOUT</a></li>
+                {{else}}
+                    <li><a href="/signup">SIGNUP</a></li>
+                    <li><a href="/login">LOGIN</a></li>
+                {{/if}}
+            </ol>
+        </div>
+    </div>
+    <section id="main" role="main">
+        {{> yield}}    
+    </section> 
+</Template>

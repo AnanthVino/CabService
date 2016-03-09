@@ -1,0 +1,78 @@
+<Template name="signup_form">
+    <section class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2">
+                <h3 class="text-center">FLIPKART</h3>
+                <form class="panel signup-form" id="signup_form" name="signup_form" action="" style="border:1px solid gray;">
+                    <div class="panel-heading">
+                        <h3 class="semibold">Create Account</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label class="name-label">Your name</label>
+                            <input type="text" name="name" class="form-control" id="full_name" placeholder="" data-parsley-error-message="Please enter your full name" data-parsley-required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="password-label">Email</label>
+                            <input type="text" name="email" class="form-control" id="signup_email" placeholder="" data-parsley-error-message="Please enter a valid email" data-parsley-required data-parsley-type="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="signup-password">Password</label>
+                            <input type="password" name="password" class="form-control" id="signup_password" placeholder="" data-parsley-error-message="Please set a password" data-parsley-required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="phone">Phone number</label>
+                            <div class="input-group">
+                                <span class="input-group-addon">+91</span>
+                                <input type="text" name="phone" id="phone" class="form-control" placeholder="" data-mask="9999999999" data-parsley-required data-parsley-error-message="Your mobile number is required so as to enable fast communication">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="location">Location</label>
+                            <!-- <input type="text" name="location" id="location" class="form-control" placeholder="City, State, Country" data-parsley-required data-parsley-error-message="Please enter your work location"> -->
+                            <input name="location" id="location" class="form-control" placeholder="City, state, country" data-parsley-required data-parsley-error-message="Your location is required">
+                            <input name="lat" id="location_lat" type="hidden" value="{{lat}}">
+                            <input name="lng" id="location_lng" type="hidden" value="{{lng}}">
+                            <input name="city" id="location_city" type="hidden" value="{{city}}">
+                            <input name="state" id="location_state" type="hidden" value="{{state}}">
+                            <input name="country" id="location_country" type="hidden" value="{{country}}">
+                            <p class="text-danger" id="location_autocomplete_error"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="roles">Roles</label>
+                            <div class="radio-inline">
+                                <input type="radio" name="role" class="role" id="driver" value="driver" data-parsley-required data-parsley-error-message="Please select a role" data-parsley-errors-container="#driver_error">
+                                <label for="driver">&nbsp;&nbsp;Driver</label>
+                                <span id="driver_error"></span>    
+                            </div>
+                            <div class="radio-inline">
+                                <input type="radio" name="role" class="role" id="passenger" value="passenger">
+                                <label for="passenger">&nbsp;&nbsp;Passenger</label>
+                            </div>
+                        </div>
+
+                        <div id="signup_error_container" class="mt15 mb15 error-container text-danger"></div>
+        
+                        <div class="form-group">
+                            <button type="button" id="signup" class="btn btn-block btn-sm btn-primary">
+                                <span class="semibold">Create your acccount</span>
+                            </button>
+                        </div>
+
+                        <div class="a-divider a-divider-break">
+                            <h5 class="text-center">Already have an account?</h5>
+                        </div>
+                        <div class="text-center">
+                            <a id="old_customer" class="btn btn-block btn-sm btn-info" href="/login">Log in</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</Template>

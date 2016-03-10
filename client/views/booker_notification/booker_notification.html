@@ -1,0 +1,21 @@
+<Template name="booker_notification">
+	<div class="container">
+		<h2>BOOKER NOTIFICATION</h2>
+		{{#each notification}}
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-body">
+							Booker name: {{booker_name}}<br>
+							Booker address: {{booker_address}}<br>
+							Booker number: {{booker_number}}
+						</div>
+						<div class="panel-footer" style="height:50px;">
+							<button type="button" id="reply" class="btn btn-sm btn-primary pull-right">Send Reply</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		{{/each}}
+	</div>
+</Template>

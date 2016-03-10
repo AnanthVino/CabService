@@ -1,0 +1,31 @@
+<Template name="base_modal">
+	<div id="active_modal" class="modal fade active-modal">
+        <div class="modal-dialog modal-md {{modal_class}}">
+            <div class="modal-content">
+				<div class="modal-header text-center">
+					<h3 class="semibold modal-title text-primary">
+						{{modal_heading}}
+						<button type="button" class="close" data-dismiss="modal">×</button>
+					</h3>
+				</div>
+				{{> Template.dynamic template=modal_inner_template data=this}}
+            </div>
+        </div>
+    </div>
+</Template>
+
+<Template name="modal_buttons">
+	<div class="modal-footer">
+		{{#if show_remove_btn}}
+			<button type="button" id="modal_remove" class="btn btn-danger pull-left ml5 mr5" data-dismiss="modal">Remove</button>
+		{{/if}}
+
+		{{#if show_submit_btn}}
+			<button type="button" id="send" class="btn btn-primary pull-right ml5 mr5">Send</button>
+		{{/if}}
+
+		{{#if show_cancel_btn}}
+			<button type="button" id="modal_cancel" class="btn btn-default pull-left ml5 mr5" data-dismiss="modal">Cancel</button>
+		{{/if}}
+	</div>
+</Template>

@@ -27,3 +27,6 @@ accounts-base
 accounts-password
 underscore
 mrt:googlemaps
+outatime:geolib
+aldeed:geocoder
+chrismbeckett:toastr

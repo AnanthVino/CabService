@@ -1,0 +1,1 @@
+@BookingRequest = new Mongo.Collection 'booking_request'

@@ -1,9 +1,9 @@
 Template.signup_form.events
 	'click button#signup': (e) ->
 		radio = $('.role:checked').val()
-		console.log 'radio:::', radio
+		# console.log 'radio:::', radio
 		$form = $('#signup_form')
-		console.log 'form:', $form
+		# console.log 'form:', $form
 		if $form.parsley().validate()
 			LoginHelpers.signupWithForm $form
 
@@ -13,9 +13,9 @@ Template.signup_form.rendered = ->
 
 	google.maps.event.addListener autocomplete, 'place_changed', ->
 		place = autocomplete.getPlace()
-		console.log "Place", place
+		# console.log "Place", place
 		components = place?.address_components
-		console.log "COMPONENTS: ", components
+		# console.log "COMPONENTS: ", components
 
 		address = {}
 
@@ -37,15 +37,15 @@ Template.signup_form.rendered = ->
 			i++
 
 		city = address.city
-		console.log 'city::',  city
+		# console.log 'city::',  city
 		state = address.state
-		console.log 'state::',  state
+		# console.log 'state::',  state
 		country = address.country
-		console.log 'country::',  country
+		# console.log 'country::',  country
 		lat = place?.geometry?.location?.lat()
-		console.log 'lat::',  lat
+		# console.log 'lat::',  lat
 		lng = place?.geometry?.location?.lng()
-		console.log 'lng::',  lng
+		# console.log 'lng::',  lng
 
 		$( self.find '#location_lat' ).val(lat)
 		$( self.find '#location_lng' ).val(lng)

@@ -1,7 +1,7 @@
 @LoginHelpers = 
 	loginWithForm: ($form) ->
 		data = FormHelpers.getFormData $form
-		console.log 'login data:', data
+		# console.log 'login data:', data
 		Meteor.loginWithPassword data.email, data.password, (err, result) ->
 			if err 
 				return $form.find('.error-container').text err.reason
@@ -13,11 +13,11 @@
 
 	signupWithForm: ($form) ->
 		data = FormHelpers.getFormData $form
-		console.log 'data:', data
+		# console.log 'data:', data
 
 		Accounts.createUser { email: data.email, password: data.password }, (err, res) ->
-			console.log 'err:', err
-			console.log 'res:'
+			# console.log 'err:', err
+			# console.log 'res:'
 			if err
 				return $form.find('.error-container').text err.reason
 
@@ -35,7 +35,7 @@
 				role: data.role
 				location: location
 
-			console.log 'profile:', profile
+			# console.log 'profile:', profile
 
 			UserHelpers.updateProfile profile
 			Router.go 'home'

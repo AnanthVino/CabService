@@ -1,0 +1,19 @@
+<Template name="message">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				{{#each all_message}}
+					<div class='all-message'>{{message}}</div>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-10">
+		<div class="input-group mt500 ml200">
+			<input type="text" class="form-control message">
+			<span class="input-group-btn">
+				<button class="btn btn-primary send" type="button">Send!</button>
+			</span>
+		</div>
+	</div>
+</Template>

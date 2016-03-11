@@ -1,17 +1,3 @@
-ReverseGeoToCity = (lat, lng) ->
-	console.log 'lat  lng:::', lat, lng
-	latlng = new (google.maps.LatLng)(lat, lng)
-	console.log 'latlng:::', latlng
-	geocoder= new google.maps.Geocoder()
-	geocoder.geocode { 'latLng': latlng }, (results, status) ->
-		console.log 'results:::', results
-		console.log 'status::::', status
-		if status == google.maps.GeocoderStatus.OK
-			if results[0]
-				console.log 'result::::', results[0]?.formatted_address
-				return results[0]?.formatted_address
-
-
 labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 labelIndex = 0
 
@@ -35,12 +21,8 @@ initialize = () ->
 
 		drivers = Meteor.users.find({'profile.role': 'driver'}).fetch()
 		return _.filter drivers, (d) ->
-			console.log 'd is::', d
+			# console.log 'd is::', d
 			if d?.profile?.role is 'driver'
-				# console.log 'lat:::', d?.profile?.location?.geometry?.coordinates[1] 
-				# console.log 'lng:::', d?.profile?.location?.geometry?.coordinates[0]
-				# console.log 'lat1:::', Meteor.user()?.profile?.location?.geometry?.coordinates[1] 
-				# console.log 'lng1:::', Meteor.user()?.profile?.location?.geometry?.coordinates[0]  
 				lat1 = d?.profile?.location?.geometry?.coordinates[1] 
 				lon1 = d?.profile?.location?.geometry?.coordinates[0]
 				lat2 = latitude 
@@ -66,17 +48,18 @@ initialize = () ->
 				# console.log 'distance:::', distance
 				if distance <= 3
 					# console.log 'ddddd::::::', d
+					UserHelpers.addBookerId d?._id, Meteor.userId()
 					setTimeout ->
 						toastr.success 'Cab available to this place'
 						latlng = new (google.maps.LatLng)(lat2, lon2)
-						console.log 'latlng:::', latlng
+						# console.log 'latlng:::', latlng
 						geocoder= new google.maps.Geocoder()
 						geocoder.geocode { 'latLng': latlng }, (results, status) ->
-							console.log 'results:::', results
-							console.log 'status::::', status
+							# console.log 'results:::', results
+							# console.log 'status::::', status
 							if status == google.maps.GeocoderStatus.OK
 								if results[0]
-									console.log 'result::::', results[0]?.formatted_address
+									# console.log 'result::::', results[0]?.formatted_address
 									address = results[0]?.formatted_address
 									booking_data =
 										booker_name : Meteor.user()?.profile?.name
@@ -84,24 +67,12 @@ initialize = () ->
 										booker_number: Meteor.user()?.profile?.phone
 										booker_id: Meteor.userId()
 										cab_id: d?._id
-									console.log 'booking data:::', booking_data
+									# console.log 'booking data:::', booking_data
 
 									Modals.requestModal booking_data
 					,2000
 
 					
-			# 		# console.log 'lat:::', d?.profile?.location?.geometry?.coordinates[1] 
-			# 		# console.log 'lng:::', d?.profile?.location?.geometry?.coordinates[0] 
-			# 		l11: d?.profile?.location?.geometry?.coordinates[1] 
-			# 		longitude1: d?.profile?.location?.geometry?.coordinates[0] 
-			# 	},{
-			# 			latitude1: Meteor.user()?.profile?.location?.geometry?.coordinates?[1]
-			# 			longitude2: Meteor.user()?.profile?.location?.geometry?.coordinates?[0]
-			# 	})
-			# 	if distance >= 300 * 1000
-			# 		return true
-			# return false
-		
 
 
 addMarker = (locations, map) ->

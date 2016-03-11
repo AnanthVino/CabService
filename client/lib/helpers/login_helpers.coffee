@@ -1,7 +1,6 @@
 @LoginHelpers = 
 	loginWithForm: ($form) ->
 		data = FormHelpers.getFormData $form
-		# console.log 'login data:', data
 		Meteor.loginWithPassword data.email, data.password, (err, result) ->
 			if err 
 				return $form.find('.error-container').text err.reason

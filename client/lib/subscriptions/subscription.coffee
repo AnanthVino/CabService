@@ -1,4 +1,6 @@
 @Subscriber = 
-	profile: (user_id) ->
-		console.log 'sub user id::::', user_id
-		Meteor.subscribe 'basic_profile', user_id
+	booker_request: () ->
+		Meteor.subscribe 'booker_request'
+	user_view: () ->
+		Meteor.subscribe 'user_view'
+
